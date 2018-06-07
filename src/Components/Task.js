@@ -8,10 +8,9 @@ toggleTask()
 
     render(){
         const task = this.props.task;
-        const toggleTaskStatus = this.props.toggleTaskStatus;
+        //const toggleTaskStatus = this.props.toggleTaskStatus;
         const onDeleteTask = this.onDeleteTask.bind(this);
         const isComplete = this.props.isComplete;
-        console.log(isComplete);
         return(
           <li className="list-group-item checkbox">
             <div className="row">

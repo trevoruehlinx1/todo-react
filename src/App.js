@@ -31,17 +31,16 @@ class App extends Component {
       <div className="App">
       The App
         <TaskForm onSubmit= {this.addTask} />
-        <TaskList tasks= {this.state.tasks} toggleTaskStatus={this.toggleTaskStatus.bind(this)}/>
+        <TaskList tasks= {this.state.tasks} deleteTask={this.deleteTask.bind(this)} toggleTaskStatus={this.toggleTaskStatus.bind(this)}/>
       </div>
     );
   }
 
-deleteTask(event, taskIndex) {
+deleteTask(taskIndex) {
   console.log("on delete task");
   let tasks = JSON.parse(JSON.stringify(this.state.tasks));
-  event.preventDefault();
   tasks.splice(taskIndex, 1);
-  this.setState(tasks);
+  this.setState({tasks});
 }
   toggleTaskStatus(index) {
     console.log(index);
